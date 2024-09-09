@@ -1,0 +1,29 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Qtile-Conf"
+ (filename . "~/.config/qtile/README.org")
+ (front-context-string . "#+TITLE: Qtile C")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26229 34320 771467 87000))
+("River-conf"
+ (filename . "~/.config/river/README.org")
+ (front-context-string . "#+TITLE: River C")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26232 8855 576976 713000))
+("Waybar-conf-dir"
+ (filename . "~/.config/waybar/")
+ (front-context-string . "arch-logo-white.")
+ (rear-context-string . "19 Jun 10 10:52 ")
+ (position . 226)
+ (last-modified 26217 27768 768428 903000))
+("hyprland.conf"
+ (filename . "~/.config/hypr/hyprland.conf")
+ (front-context-string . "# This is an exa")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26217 27747 434088 571000))
+)

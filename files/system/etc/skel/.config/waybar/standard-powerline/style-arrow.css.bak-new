@@ -1,0 +1,214 @@
+* {
+    /* height: 15; */
+    border: none;
+    border-radius: 0;
+    font-family: Ubuntu Mono Bold, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 12px;
+    min-height: 22px;
+}
+
+window#waybar {
+    background: #282c34;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    /* color: white; */
+}
+
+/* tooltip {
+  background: rgba(43, 48, 59, 0.5);
+}
+tooltip label {
+  color: white;
+} */
+/*#workspaces {
+    padding: 0 1px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+} */
+
+#custom-left-arrow-light-1st {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 50px;
+    color: #467b96;
+    background: #282c34;
+    margin: -27px -15px -20px 0px;
+}
+
+#custom-left-arrow-light {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 50px;
+    color: #467b96;
+    background: #889fa7;
+    margin: -27px -15px -20px 0px;
+}
+
+#custom-left-arrow-light2 {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 50px;
+    color: #889fa7;
+    background: #467b96;
+    margin: -27px -15px -20px 0px;
+}
+
+
+#workspaces button {
+    padding: 0 4px;
+    background: transparent;
+    color: #dfdfdf;
+    border-bottom: 2px solid transparent;
+} 
+
+#workspaces button.hidden {
+    background: transparent;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.persistent {
+    background: transparent;
+    color: #696969;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.visible {
+    background: transparent;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.urgent {
+    background: transparent;
+    color: #ff0000;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    background: #1c1f24; /*either transparent or #1c1f24 */
+    color: #dfdfdf; 
+    border-bottom: 2px solid #51afef;
+}
+
+#workspaces button.focused {
+    background: transparent;
+    color: #dfdfdf; 
+    border-bottom: 2px solid #51afef;
+}
+
+
+#tags button {
+    padding: 0 1px;
+    font-size: 12px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+}
+
+/* IMPORTANT: for focused rules to apply over occupied rules,
+ the focused tags styling needs to be written after the occupied tag rules */
+
+#tags button.occupied {
+    font-size: 12px;
+    background: transparent;
+    color: #dfdfdf;
+    border-bottom: 2px solid transparent;
+}
+
+#tags button.focused {
+    font-size: 12px;
+    background: transparent;
+    color: #dfdfdf; 
+    border-bottom: 2px solid #51afef;
+}
+
+
+#tags button.urgent {
+    font-size: 12px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+}
+
+#custom-separator {
+    color: #666666;
+    margin: 0 0px;
+}
+
+#tray {
+    background: transparent;
+    margin: 0 5px;
+}
+
+/* #mode, #clock, #battery {
+    padding: 0 10px;
+} */
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#window {
+    font-size: 13px;
+    background: transparent;
+    color: #51afef;
+    margin: 0 5px;
+}
+
+#clock {
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#cpu {
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#backlight {
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#temperature {
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#memory {
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#pulseaudio {
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#wireplumber {
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#battery {
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#battery.critical {
+    background-color: #467b96;
+    color: #ff0000;
+}
+#battery.charging {
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#image{
+    padding-left: 5px;
+    padding-right: 5px;
+}

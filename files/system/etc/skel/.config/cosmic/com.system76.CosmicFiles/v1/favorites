@@ -1,0 +1,9 @@
+[
+    Home,
+    Documents,
+    Downloads,
+    Music,
+    Pictures,
+    Path("/home/shatterstone/uni"),
+    Path("/home/shatterstone/Games"),
+]

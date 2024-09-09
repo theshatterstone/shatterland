@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=bash ~/.config/autostart/autostart-exec.sh
+Icon=system-run
+Terminal=true
+TerminalOptions=
+Type=Application
+Name=COSMIC Autostart
+Comment=Autostart only in COSMIC DE
+X-GNOME-Autostart-enabled=true
+OnlyShowIn=cosmic;

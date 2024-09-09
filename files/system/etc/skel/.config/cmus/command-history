@@ -1,0 +1,183 @@
+q
+add ~/Music/Music/Compilation of Sea Shanties.m4a
+pl-create Sea-Shanties
+add ~/Music/Music/Deep Work Music for Programmers, Creators, Designers — Atmospheric Future Garage.m4a
+pl-create Deep-Work
+set color_titleline_bg=31
+set color_titleline_bg=34
+set color_separator=
+set color_separator=73
+set color_separator=72
+set color_separator=71
+set color_separator=70
+set color_separator=69
+set color_separator=68
+set color_separator=67
+set color_separator=66
+set color_separator=65
+set color_separator=64
+set color_separator=63
+set color_separator=62
+set color_separator=61
+set color_separator=60
+set color_separator=59
+set color_separator=58
+set color_separator=57
+set color_separator=56
+set color_separator=55
+set color_separator=54
+set color_separator=53
+set color_separator=52
+set color_separator=51
+set color_separator=50
+set color_separator=49
+set color_separator=48
+set color_separator=47
+set color_separator=46
+set color_separator=45
+set color_separator=44
+set color_separator=43
+set color_separator=42
+set color_separator=41
+set color_separator=40
+set color_separator=39
+set color_separator=38
+set color_separator=37
+set color_separator=36
+set color_separator=35
+set color_separator=34
+set color_separator=33
+set color_separator=32
+set color_separator=31
+set color_separator=30
+set color_separator=29
+set color_separator=28
+set color_separator=27
+set color_separator=26
+set color_separator=25
+set color_separator=24
+set color_separator=23
+set color_separator=22
+set color_separator=21
+set color_separator=19
+set color_separator=18
+set color_separator=17
+set color_separator=16
+set color_separator=15
+set color_separator=20
+set color_separator=050
+set color_separator=010
+set color_separator=003
+set color_separator=3
+set color_separator=2
+set color_separator=1
+set color_separator=109
+set color_separator=112
+set color_separator=111
+set color_separator=115
+set color_separator=100
+set color_separator=120
+set color_separator=110
+set color_separator=230
+set color_separator=220
+set color_separator=210
+set color_separator=200
+set color_separator=2000
+set color_separator=190
+set color_separator=180
+set color_separator=150
+set color_separator=250
+set color_separator=rgb:70
+set color_separator=rgb:70 123 150
+set color_separator=rgb:70,123,150
+:q
+set start_view=playlist
+bind -f common 1 view playlist
+set start_view
+add ~/Music/Music/100 Greatest Classic Rock (2020)/100 Greatest Classic Rock (2020)/
+add ~/Music/Music/Ахат - Черната овца (текст).m4a
+add ~/Music/Music/EAST 17  - Thunder.m4a
+add ~/Music/Music/CLR/Skillet - Monster (Lyrics)(M4A_128K).m4a
+add ~/Music/Music/CLR/R.E.M. - It_s The End Of The World As We Know It (And I Feel Fine).m4a
+add ~/Music/Music/CLR/Old Time Rock & Roll.m4a
+add ~/Music/Music/CLR/Journey - Don_t Stop Believin_ (Official Audio)(M4A_128K).m4a
+add ~/Music/Music/CLR/Jack & Diane.m4a
+add ~/Music/Music/CLR/It_s Only Rock_n_Roll (But I Like It)(M4A_128K).m4a
+add ~/Music/Music/CLR/George Harrison - Got My Mind Set On You (Version II).m4a
+add ~/Music/Music/CLR/Europe - The Final Countdown (Official Video)(M4A_128K).m4a
+add ~/Music/Music/CLR/Dire Straits - Walk Of Life.m4a
+add ~/Music/Music/CLR/Cream - White Room - Lyrics(M4A_128K).m4a
+pl-export677
+pl-create CLR-Full
+pl-create
+help
+pl-export Music/Music/Playlists/A9-Linux.m3u
+add Music/Music/A9/
+win-up
+win-page-up 
+win-scroll-up 
+pl-create A9
+pl-export Music/Music/Playlists/WD_-Ultimate.m3u
+pl-export Music/Music/Playlists/CL
+pl-export Music/Music/Playlists/CLR-Rem1-Linux.m3u
+pl-export Music/Music/Playlists/All.m3u
+pl-export Music/Music/Playlists/
+add Music/Music/Karl Casey - Nightmare City.m4a
+add Music/Music/WD_Extra/
+add Music/Music/WD_
+pl-create WD_-Ultimate
+add Music/Music/CLR/Steppenwolf - Born To Be Wild(M4A_128K).m4a
+add Music/Music/CLR/Skillet - Monster (Lyrics)(M4A_128K).m4a
+add Music/Music/CLR/R.E.M. - It_s The End Of The World As We Know It (And I Feel Fine).m4a
+add Music/Music/CLR/Queen – Bohemian Rhapsody (Official Video Remastered)(M4A_128K).m4a
+add Music/Music/CLR/Queen - We Will Rock You (Official Video).m4a
+add Music/Music/CLR/Kansas - Carry On Wayward Son (Official Audio)(M4A_128K).m4a
+add Music/Music/CLR/Journey - Don_t Stop Believin_ (Official Audio)(M4A_128K).m4a
+add Music/Music/CLR/Jack & Diane.m4a
+add Music/Music/CLR/It_s Only Rock_n_Roll (But I Like It)(M4A_128K).m4a
+add Music/Music/CLR/George Harrison - Got My Mind Set On You (Version II).m4a
+add Music/Music/CLR/Europe - The Final Countdown (Official Video)(M4A_128K).m4a
+add Music/Music/CLR/Dire Straits - Walk Of Life.m4a
+add Music/Music/CLR/Cream - White Room - Lyrics(M4A_128K).m4a
+add Music/Music/100 Greatest Classic Rock (2020)/
+pl-create CLR-Rem1
+bind -f common t win-toggle
+load
+add Music/Music/
+pl-import ~/Music/Music/Playlists/100 CLR.m3u
+pl-import ~/Music/Music/Playlists/CLR_new.m3u
+pl-import ~/Music/Music/Playlists/WD_ (2).m3u
+pl-import ~/Music/Music/Playlists/WD_ (1).m3u
+pl-import ~/Music/Music/Playlists/A9.m3u
+pl-import ~/Music/Music/Playlists/CLR.m3u
+pl-import ~/Music/Music/Playlists/CLR-Remastered (1).m3u
+pl-import ~/Music/Music/Playlists/"CLR-Remastered (1).m3u"
+pl-import "~/Music/Music/Playlists/CLR-Remastered (1).m3u"
+pl-import Music/Music/Playlists/CLR-Remastered (1).m3u
+pl-create 
+pwd
+pl-import 
+pl-import
+add Music/Music/Playlists/CLR-Remastered (1).m3u
+bind -f common d clear -p
+clear -p
+bind -f common ] player-next
+bind -f common [ player-prev
+bind -f common space player-pause
+bind -f space player-pause
+bind -f   player-pause
+bind -f Space player-pause
+player-pause
+add Music/
+cd ~
+source 100 CLR.m3u
+cd Playlists/
+cd ..
+cd ../A9/
+cd Music/Music/CLR/
+browser-up
+cd ~/Music/Music/100 Greatest Classic Rock (2020)/100 Greatest Classic Rock (2020)/
+cd Music
+add
+Q
+cd Music/Music/100 Greatest Classic Rock (2020)/

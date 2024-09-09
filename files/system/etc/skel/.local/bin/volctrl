@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+# volctrl script
+
+# Function to display help information
+show_help() {
+  echo "Usage: volctrl [OPTION] [ARG]"
+  echo "Options:"
+  echo "  set [ARG]      Adjust the volume by the specified amount"
+  echo "                 ARG can be in the format +50, -50, 50, etc."
+  echo "  --help         Display this help message"
+}
+
+# Function to handle error messages
+error_message() {
+  echo "Error: $1"
+  show_help
+  exit 1
+}
+
+# Function to get the current volume percentage
+get_current_volume() {
+  amixer get Master | grep -oP '\[\K[0-9]+(?=%\])' | head -n 1
+}
+
+# Function to set the new volume
+set_volume() {
+  local new_volume=$1
+  amixer set Master "${new_volume}%"
+  if [[ $? -ne 0 ]]; then
+    error_message "Failed to adjust volume"
+  fi
+}
+
+# Function to adjust volume to be a multiple of 5
+adjust_to_multiple_of_5() {
+  local volume=$1
+  while (( volume % 5 != 0 )); do
+    (( volume-- ))
+  done
+  echo $volume
+}
+
+# Check the first argument using a case statement
+case "$1" in
+  set)
+    if [[ -n "$2" ]]; then
+      current_volume=$(get_current_volume)
+      if [[ $? -ne 0 ]]; then
+        error_message "Failed to get current volume"
+      fi
+
+      # Calculate new volume based on the second argument
+      if [[ "$2" == +* ]]; then
+        increment=${2#+}
+        new_volume=$((current_volume + increment))
+      elif [[ "$2" == -* ]]; then
+        decrement=${2#-}
+        new_volume=$((current_volume - decrement))
+      else
+        new_volume=$2
+      fi
+
+      # Ensure new_volume is within valid range (0-100)
+      if [[ new_volume -lt 0 ]]; then
+        new_volume=0
+      elif [[ new_volume -gt 100 ]]; then
+        new_volume=100
+      fi
+
+      # Adjust volume to be a multiple of 5
+      new_volume=$(adjust_to_multiple_of_5 "$new_volume")
+      echo "Adjusted volume: $new_volume%"
+
+      # Set the new volume
+      set_volume "$new_volume"
+    else
+      error_message "Missing second argument for 'set' command"
+    fi
+    ;;
+  --help)
+    show_help
+    ;;
+  *)
+    show_help
+    ;;
+esac

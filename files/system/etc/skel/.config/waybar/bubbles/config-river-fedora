@@ -1,0 +1,386 @@
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 24, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 5, 
+    // Choose the order of the modules
+    "modules-left": ["image#fedora-logo", "hyprland/workspaces", "custom/sep-ws", "image#layout", "custom/layout", "custom/sep-ws", "hyprland/window"], //for hyprland
+    //"modules-left": ["tray", "hyprland/window"], //for hyprland
+    "modules-left": ["tray", "river/window"], //for river
+    //"modules-left": ["image#logo", "hyprland/workspaces", "hyprland/window"], //for hyprland
+    // "modules-left": ["sway/workspaces", "sway/window"], //for sway
+    // "modules-left": ["river/tags", "river/window"], //for river
+    //"modules-center": [],
+    //"modules-center": ["hyprland/workspaces"], //for hyprland
+    "modules-center": ["river/tags"], // for river
+    //"modules-right": [ "tray", "custom/brightness", "backlight", "custom/sep-ws", "custom/cpuicon", "cpu", "custom/sep-ws", "custom/baticon", "battery", "custom/sep-ws", "custom/volicon", "wireplumber", "custom/sep-ws", "custom/tempicon", "temperature", "custom/sep-ws", "custom/memicon", "memory", "custom/sep-ws", "custom/dateicon", "clock"],
+    "modules-right": ["backlight", "cpu", "battery", "wireplumber", "temperature", "memory", "clock"],
+    //"modules-right": ["tray", "custom/left-arrow-light-1st", "custom/brightness", "backlight", "custom/left-arrow-light2", "custom/cpuicon", "cpu", "custom/left-arrow-light", "custom/baticon", "battery", "custom/left-arrow-light2", "custom/volicon", "wireplumber", "custom/left-arrow-light", "custom/tempicon", "temperature", "custom/left-arrow-light2", "custom/memicon", "memory", "custom/left-arrow-light", "custom/dateicon", "clock"],
+    // Modules configuration
+    // "wlr/workspaces": {
+    //     "active-only": false,
+    //     "all-outputs": true,
+    //     "format": "{name}"
+    //     },
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "all-outputs": false,
+        "sort-by-number": true,
+	"persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+        },
+        "format": "{name}"
+    },
+    
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "format": "{id}",
+	//"format": "{icon}",
+	//"format-icons": {
+	//	"1": "WEB",
+	//	"2": "EMACS",
+	//	"3": "TERM",
+	//	"4": "FILE",
+	//	"5": "SYS",
+	//	"6": "TEAMS",
+	//	"7": "DOC",
+	//	"8": "CHAT",
+	//	"9": "MUS",
+	//	//"active": "",
+	//	//"default": ""
+	//},
+        "all-outputs": false,
+        "sort-by-number": true,
+	"persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+        },
+        // "format": "{name}"
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 100
+    },
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "all-outputs": true,
+        "sort-by-number": true,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+        }
+    },
+    
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 50
+    },
+
+    "river/tags": {
+        "num-tags": 9,
+        "disable-click": false
+
+    },
+    
+    "river/window": {
+        "format": "{}",
+        "max-length": 80,
+        "tooltip": false
+    },
+
+    "image#hypr-logo": {
+        "path": "/home/shatterstone/.config/waybar/hyprland-logo.png",
+        "size": 20,
+        "interval": 5,
+        "on-click": "kitty"
+    },
+
+   "image#wayland-logo": {
+       "path": "/home/shatterstone/.config/waybar/wayland-logo-white.png",
+       "size": 15,
+       "interval": 5,
+       "on-click": "kitty"
+   },
+
+    "image#nixos-logo": {
+        "path": "/home/shatterstone/.config/waybar/nixos-logo-white.svg",
+        "size": 20,
+        "interval": 5,
+        "on-click": "kitty"
+    },
+
+    "image#arch-logo": {
+        "path": "/home/shatterstone/.config/waybar/arch-logo-white.png",
+        "size": 18,
+        "interval": 5,
+        "on-click": "kitty"
+    },
+
+    "image#fedora-logo": {
+        "path": "/home/shatterstone/.config/waybar/fedora-logo-new.svg",
+        "size": 18,
+        "interval": 5,
+        "on-click": "kitty"
+    },
+    "image#layout": {
+        "path": "/home/shatterstone/.config/waybar/qtile-powerline/layout-logo.png",
+        "size": 13,
+        "interval": 5
+    },
+
+	"custom/sep-ws": {
+		"format": "|",
+		"tooltip": false
+	},
+
+	"custom/brightness": {
+		"format": " 󱄄 ",
+		"tooltip": false
+	},
+
+	"custom/cpuicon": {
+		"format": "  ",
+		"tooltip": false
+	},
+	"custom/baticon": {
+		"format": "  ",
+		"tooltip": false
+	},
+
+	"custom/volicon": {
+		"format": " 󰕾 ",
+		"tooltip": false
+	},
+
+	"custom/tempicon": {
+		"format": "  ",
+		"tooltip": false
+	},
+
+
+	"custom/memicon": {
+		"format": " 󰒋 ",
+		"tooltip": false
+	},
+
+	"custom/dateicon": {
+		"format": " 󰃭 ",
+		"tooltip": false
+	},
+
+	"custom/layout": {
+	// Requires to escape the \ char and the " after it, so that when they are escaped and parsed in json, they are sent as \" to sh, so that sh can escape the " and then all is well
+		"exec": "hyprctl getoption general:layout | grep str: | awk '{print $NF}'", 
+		//"exec": "hyprctl getoption general:layout | grep str: | cut -d \\\" -f2",
+		//"exec": "echo Hello",
+		"format": "{}",
+		"restart-interval": 10,
+		"tooltip": false
+	},
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+
+    // "custom/left-arrow-light-1st": {
+	// 	"format": "",
+	// 	"tooltip": false
+	// },
+    "custom/left-arrow-light-1st": {
+		"format": "◢",
+		"tooltip": false
+	},
+
+    // The following is actually used
+	// "custom/left-arrow-light": {
+	// 	"format": "",
+	// 	"tooltip": false
+	// },
+    "custom/left-arrow-light": {
+		"format": "◢",
+		"tooltip": false
+	},
+
+    "custom/left-arrow-dark2": {
+		"format": "",
+		"tooltip": false
+	},
+
+    // The following is actually used above
+	// "custom/left-arrow-light2": {
+	// 	"format": "",
+	// 	"tooltip": false
+	// },
+    "custom/left-arrow-light2": {
+		"format": "◢",
+		"tooltip": false
+	},
+    "wireplumber": {
+        "format": " 󰕾     {volume}%   ",
+        "format-muted": " 󰕾     M ",
+        //"format-muted": " 󰕾 M   ",
+        "interval": "0.1"
+    },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    // "sway/mode": {
+    //     "format": "<span style=\"italic\">{}</span>"
+    // },
+    // "sway/scratchpad": {
+    //     "format": "{icon} {count}",
+    //     "show-empty": false,
+    //     "format-icons": ["", ""],
+    //     "tooltip": true,
+    //     "tooltip-format": "{app}: {title}"
+    // },
+    // "mpd": {
+    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    //     "format-disconnected": "Disconnected ",
+    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //     "unknown-tag": "N/A",
+    //     "interval": 2,
+    //     "consume-icons": {
+    //         "on": " "
+    //     },
+    //     "random-icons": {
+    //         "off": "<span color=\"#f53c3c\"></span> ",
+    //         "on": " "
+    //     },
+    //     "repeat-icons": {
+    //         "on": " "
+    //     },
+    //     "single-icons": {
+    //         "on": "1 "
+    //     },
+    //     "state-icons": {
+    //         "paused": "",
+    //         "playing": ""
+    //     },
+    //     "tooltip-format": "MPD (connected)",
+    //     "tooltip-format-disconnected": "MPD (disconnected)"
+    // },
+    // "idle_inhibitor": {
+    //     "format": "{icon}",
+    //     "format-icons": {
+    //         "activated": "",
+    //         "deactivated": ""
+    //     }
+    // },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 5
+    },
+
+    "cpu": {
+        "format": "     {usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " 󰒋   {used}GiB/{total}GiB "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "    {temperatureC}°C "
+        // "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": " 󱄄     {percent}% "
+        // "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "      {capacity}% ",
+        "format-charging": "   󱐋 {capacity}% ",
+        //"format-charging": " 󱐋 {capacity}%   ",
+        // "format-plugged": "   Battery: {capacity}% Plugged   ",
+        "format-full": "     Full "
+        // "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-icons": ["", "", "", "", ""]
+    },
+
+    // "network": {
+    //     // "interface": "wlp2*", // (Optional) To force the use of this interface
+    //     "format-wifi": "{essid} ({signalStrength}%) ",
+    //     "format-ethernet": "{ipaddr}/{cidr} ",
+    //     "tooltip-format": "{ifname} via {gwaddr} ",
+    //     "format-linked": "{ifname} (No IP) ",
+    //     "format-disconnected": "Disconnected ⚠",
+    //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    // },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{format_source}",
+        "format-bluetooth": "    {volume}%   ",
+        "format-bluetooth-muted": "    M   ",
+        "format-muted": "   M   ",
+        "format-source": "   {volume}%   ",
+        "format-source-muted": "   M   ",
+        "on-click": "pavucontrol"
+    },
+    // "custom/media": {
+    //     "format": "{icon} {}",
+    //     "return-type": "json",
+    //     "max-length": 40,
+    //     "format-icons": {
+    //         "spotify": "",
+    //         "default": "🎜"
+    //     },
+    //     "escape": true
+    //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    //     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    // },
+    "clock": {
+        "format": " 󰃭   {:%A, %d %B - %H:%M }"
+    }
+}
+

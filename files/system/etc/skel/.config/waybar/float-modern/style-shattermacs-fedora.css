@@ -1,0 +1,349 @@
+* {
+    /* height: 15; */
+    /* border: none; */
+    /* border-radius: 0; */
+    /* border-top: 20px solid #467b96; */
+    
+    /* font-family: Ubuntu Mono Bold, Roboto, Helvetica, Arial, sans-serif; */
+    font-family: Ubuntu;
+    font-style: normal;
+    /*font-weight: bold; */
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+window#waybar {
+    background: #282c34;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    /* color: white; */
+    /* border-bottom: 5px solid rgba(0,0,0,0); */
+    /* border-top: 1px solid transparent; */
+    /* border-left: 5px solid rgba(0,0,0,0); */
+    /* border-right: 5px solid rgba(0,0,0,0); */
+    border-radius: 10px;
+    /* border-width: 10px; */
+    /* border-color: #000000; */
+    margin-top: 5000px;
+}
+
+/* tooltip {
+  background: rgba(43, 48, 59, 0.5);
+}
+tooltip label {
+  color: white;
+} */
+/*#workspaces {
+    padding: 0 1px;
+    background: transparent;
+    color: #889fa7;
+    border-radius: 0px;
+    border-bottom: 2px solid transparent;
+} */
+
+#custom-left-arrow-light-1st {
+	color: #467b96;
+    background: #282c34;
+}
+
+#custom-left-arrow-light {
+	color: #467b96;
+    background: #889fa7;
+}
+
+#custom-left-arrow-light2 {
+	color: #889fa7;
+    background: #467b96;
+}
+
+
+#workspaces button {
+    padding: 0 4px;
+    background: transparent;
+    color: #dfdfdf;
+    border-bottom: 2px solid transparent;
+} 
+
+#workspaces button.hidden {
+    background: transparent;
+    color: #ffffff;
+    border-radius: 0px;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.persistent {
+    background: transparent;
+    font-size: 13px;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+}
+
+/*defines empty workspaces*/
+#workspaces button.empty {
+    background: transparent;
+    color: #696969;
+    border-radius: 0px;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.visible {
+    background: transparent;
+    color: #ffffff;
+    border-radius: 0px;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.urgent {
+    background: transparent;
+    color: #889fa7;
+    border-radius: 0px;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    background: #1c1f24; /*either transparent or #1c1f24 */
+    color: #dfdfdf; 
+    border-radius: 0px;
+    border-bottom: 2px solid #409ede;
+}
+
+#workspaces button.focused {
+    background: transparent;
+    color: #dfdfdf; 
+    border-radius: 0px;
+    border-bottom: 2px solid #409ede;
+}
+
+
+#tags button {
+    padding: 0 2px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+}
+
+/* IMPORTANT: for focused rules to apply over occupied rules,
+ the focused tags styling needs to be written after the occupied tag rules */
+
+#tags button.occupied {
+    background: transparent;
+    color: #dfdfdf;
+    border-bottom: 2px solid transparent;
+}
+
+#tags button.focused {
+    background: transparent;
+    color: #dfdfdf; 
+    border-bottom: 2px solid #409ede;
+}
+
+
+#tags button.urgent {
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+}
+
+#custom-separator {
+    color: #666666;
+    margin: 5 5 5 5px;
+}
+
+/* Separator based on the one used in Qtile on the left hand side
+   (between Workspaces, layout, and window name) */
+#custom-sep-ws {
+    font-family: Ubuntu Mono;
+    font-weight: 400;
+    color: #474747; /* #666666 or #474747 */
+    font-size: 14px; /* 10 or 14 px */
+    margin: 0 2 0 2px;
+}
+/* Custom Layout Widget to show the current layout in Hyprland */
+#custom-layout {
+    color: #dfdfdf;
+    font-size: 11px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 3px 0 0px;
+}
+
+#custom-brightness {
+    color: #409ede;
+    background: transparent;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+    border-bottom: 2px solid #409ede;
+}
+
+#custom-cpuicon {
+    color: #99afb8;
+    background: transparent;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+    border-bottom: 2px solid #99afb8;
+}
+
+#custom-baticon {
+    color: #409ede;
+    background: transparent;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+    border-bottom: 2px solid #409ede;
+}
+
+#custom-volicon {
+    color: #99afb8;
+    background: transparent;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+    border-bottom: 2px solid #99afb8;
+}
+
+#custom-tempicon {
+    color: #409ede;
+    background: transparent;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+    border-bottom: 2px solid #409ede;
+}
+
+#custom-memicon {
+    color: #99afb8;
+    background: transparent;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+    border-bottom: 2px solid #99afb8;
+}
+
+#custom-dateicon {
+    color: #409ede;
+    background: transparent;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+    border-bottom: 2px solid #409ede;
+}
+#tray {
+    background: transparent;
+    margin: 0 5px;
+}
+
+/* #mode, #clock, #battery {
+    padding: 0 10px;
+} */
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#window {
+    font-size: 13px;
+    background: transparent;
+    color: #51afef;
+    margin: 0 5px;
+}
+
+#clock {
+    background-color: transparent;
+    color: #409ede;
+    border-bottom: 2px solid #409ede;
+    border-right: 5px solid transparent;
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+}
+
+#cpu {
+    background-color: transparent;
+    color: #99afb8;
+    border-bottom: 2px solid #99afb8;
+}
+
+#backlight {
+    background-color: transparent;
+    color: #409ede;
+    border-bottom: 2px solid #409ede;
+}
+
+#temperature {
+    background-color: transparent;
+    color: #409ede;
+    border-bottom: 2px solid #409ede;
+}
+
+#memory {
+    background-color: transparent;
+    color: #99afb8;
+    border-bottom: 2px solid #99afb8;
+}
+
+#pulseaudio {
+    background-color: transparent;
+    color: #99afb9;
+    border-bottom: 2px solid #99afb8;
+}
+
+#wireplumber {
+    background-color: transparent;
+    color: #99afb9;
+    border-bottom: 2px solid #99afb8;
+}
+
+#battery {
+    background-color: transparent;
+    color: #409ede;
+    border-bottom: 2px solid #409ede;
+}
+
+/*#battery.charging {
+    color: #26A65B;
+    background-color: transparent;
+    border-bottom: 2px solid #26A65B;
+}*/
+
+#image{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#image.nixos-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+#image.wayland-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+#image.arch-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+/* #image.wayland-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+} */

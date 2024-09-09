@@ -1,0 +1,369 @@
+* {
+    /* height: 15; */
+    /* border: none; */
+    /* border-radius: 0; */
+    /* border-top: 20px solid #467b96; */
+    
+    /* font-family: Ubuntu Mono Bold, Roboto, Helvetica, Arial, sans-serif; */
+    font-family: Ubuntu;
+    font-style: normal;
+    /*font-weight: bold; */
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 18px;
+}
+
+window#waybar {
+    background: #282c34;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    /* color: white; */
+    /* border-bottom: 5px solid rgba(0,0,0,0); */
+    /* border-top: 1px solid transparent; */
+    /* border-left: 5px solid rgba(0,0,0,0); */
+    /* border-right: 5px solid rgba(0,0,0,0); */
+    border-radius: 10px;
+    /* border-width: 10px; */
+    /* border-color: #000000; */
+    margin-top: 5000px;
+}
+
+/* tooltip {
+  background: rgba(43, 48, 59, 0.5);
+}
+tooltip label {
+  color: white;
+} */
+/*#workspaces {
+    padding: 0 1px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+} */
+
+#custom-left-arrow-light-1st {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 40px;
+    color: #467b96;
+    background: #282c34;
+    margin: -27px -15px -20px 0px;
+}
+
+#custom-left-arrow-light {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 40px;
+    color: #467b96;
+    background: #889fa7;
+    margin: -27px -15px -20px 0px;
+}
+
+#custom-left-arrow-light2 {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 40px;
+    color: #889fa7;
+    background: #467b96;
+    margin: -27px -15px -20px 0px;
+}
+
+
+#workspaces button {
+    padding: 0 4px;
+    font-size: 13px;
+    background: transparent;
+    /*color: #dfdfdf;*/
+    border-bottom: 2px solid transparent;
+} 
+
+/* irrelevant in hyprland*/
+#workspaces button.hidden {
+    background: transparent;
+    font-size: 13px;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+}
+
+/*defines persistent workspaces; if a workspace is persistent but not empty,
+ it will highlight it aka it acts the way visible is supposed to*/
+#workspaces button.persistent {
+    background: transparent;
+    font-size: 13px;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+}
+
+/*defines empty workspaces*/
+#workspaces button.empty {
+    background: transparent;
+    font-size: 13px;
+    color: #696969;
+    border-bottom: 2px solid transparent;
+}
+
+/* #workspaces button.visible {
+    background: transparent;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+} */
+
+#workspaces button.urgent {
+    background: transparent;
+    font-size: 13px;
+    color: #ff6c6b;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    background: #1c1f24; /*either transparent or #1c1f24 */
+    font-size: 13px;
+    /*color: #dfdfdf; */
+    border-bottom: 2px solid #51afef;
+}
+
+#workspaces button.focused {
+    background: transparent;
+    font-size: 13px;
+    /*color: #dfdfdf; */
+    border-bottom: 2px solid #51afef;
+}
+
+#tags button {
+    padding: 0 1px;
+    font-size: 12px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+}
+
+/* IMPORTANT: for focused rules to apply over occupied rules,
+ the focused tags styling needs to be written after the occupied tag rules */
+
+#tags button.occupied {
+    font-size: 12px;
+    background: transparent;
+    color: #dfdfdf;
+    border-bottom: 2px solid transparent;
+}
+
+#tags button.focused {
+    font-size: 12px;
+    background: transparent;
+    color: #dfdfdf; 
+    border-bottom: 2px solid #51afef;
+}
+
+
+#tags button.urgent {
+    font-size: 12px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+}
+
+/* Separator used for DT-like themes */
+#custom-separator {
+    color: #666666;
+    margin: 0 0px;
+}
+
+/* Separator based on the one used in Qtile on the left hand side
+   (between Workspaces, layout, and window name) */
+#custom-sep-ws {
+    font-family: Ubuntu Mono;
+    font-weight: 400;
+    color: #474747; /* #666666 or #474747 */
+    font-size: 14px; /* 10 or 14 px */
+    margin: 0 0px;
+}
+/* Custom Layout Widget to show the current layout in Hyprland */
+#custom-layout {
+    color: #dfdfdf;
+    font-size: 11px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 3px 0 0px;
+}
+
+#custom-brightness {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+}
+
+#custom-cpuicon {
+    color: #282c34;
+    background: #889fa7;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+}
+
+#custom-baticon {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+}
+
+#custom-volicon {
+    color: #282c34;
+    background: #889fa7;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+}
+
+#custom-tempicon {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+}
+
+#custom-memicon {
+    color: #282c34;
+    background: #889fa7;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+}
+
+#custom-dateicon {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 0px 0 0px;
+}
+#tray {
+    background: transparent;
+    margin: 0 5px;
+}
+
+/* #mode, #clock, #battery {
+    padding: 0 10px;
+} */
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#window {
+    font-size: 13px;
+    background: transparent;
+    color: #51afef;
+    margin: 0 5px;
+}
+
+#clock {
+    font-family: Ubuntu;
+    /*font-weight: 600; */
+    font-size: 11px;
+    background-color: #467b96;
+    color: #dfdfdf;
+    /* border-left: 0px solid #467b96; */
+    border-right: 5px solid #467b96;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; 
+}
+
+#cpu {
+    font-size: 11px;
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#backlight {
+    font-size: 11px;
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#temperature {
+    font-size: 11px;
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#memory {
+    font-size: 11px;
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#pulseaudio {
+    font-size: 11px;
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#wireplumber {
+    font-size: 11px;
+    background-color: #889fa7;
+    color: #282c34;
+}
+
+#battery {
+    font-size: 11px;
+    background-color: #467b96;
+    color: #dfdfdf;
+}
+
+#battery.critical {
+    font-size: 11px;
+    background-color: #467b96;
+    color: #ff0000;
+}
+#battery.charging {
+    font-size: 11px;
+    background-color: #467b96;
+    color: #dfdfdf;
+    padding-right: 3px;
+}
+
+#image.layout{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#image.nixos-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+#image.wayland-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+#image.arch-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+/* #image.wayland-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+} */
