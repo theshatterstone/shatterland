@@ -38,6 +38,7 @@ modules:
        - hack-fonts
        - j4-dmenu-desktop
        - grimshot
+       - waybar
        - swaybg
        - bemenu
        - hyprland
