@@ -35,7 +35,7 @@ modules:
        - ristretto
        - foot
        - nwg-look
-       - hack-fonts
+       # - hack-fonts
        - j4-dmenu-desktop
        - grimshot
        - swaybg
