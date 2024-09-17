@@ -80,6 +80,9 @@ modules:
         google-fonts:
           - Roboto
           - Open Sans
-
+  - type: chezmoi
+    repository: "https://gtilab.com/theshatterstone/dots-chezmoi" # my dotfiles repo
+    all-users: true # enabled for all users
+    file-conflict-policy: replace # override changed files with those from the repo
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
