@@ -73,17 +73,18 @@ modules:
       # - org.gnome.eog
   - type: fonts
     fonts:
-        nerd-fonts:
-          # - FiraCode # don't add spaces or "Nerd Font" suffix.
-          - Hack
-          - Ubuntu
-          # - SourceCodePro
-          - Terminus
-          # - JetBrainsMono
-          - NerdFontsSymbolsOnly
-        google-fonts:
-          - Roboto
-          - Open Sans
+      nerd-fonts:
+        - FiraCode # don't add spaces or "Nerd Font" suffix.
+        - Hack
+        - SourceCodePro
+        - Terminus
+        - Ubuntu
+        - UbuntuMono
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
   - type: chezmoi
     repository: "https://gitlab.com/theshatterstone/dots-chezmoi" # my dotfiles repo
     all-users: true # enabled for all users
