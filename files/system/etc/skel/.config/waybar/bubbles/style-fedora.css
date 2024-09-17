@@ -1,0 +1,488 @@
+* {
+
+    /* height: 15; */
+    /* border: none; */
+    /* border-radius: 0; */
+    /* border-top: 20px solid #467b96; */
+    
+    /* font-family: Ubuntu Mono Bold, Roboto, Helvetica, Arial, sans-serif; */
+    font-family: Ubuntu;
+    font-style: normal;
+    /*font-weight: bold; */
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    /* color: white; */
+    /* border-bottom: 5px solid rgba(0,0,0,0); */
+    /* border-top: 1px solid transparent; */
+    /* border-left: 5px solid rgba(0,0,0,0); */
+    /* border-right: 5px solid rgba(0,0,0,0); */
+    /*border-radius: 10px;*/
+    /* border-width: 10px; */
+    /* border-color: #000000; */
+    margin-top: 5000px;
+}
+
+/* tooltip {
+  background: rgba(43, 48, 59, 0.5);
+}
+tooltip label {
+  color: white;
+} */
+/*#workspaces {
+    padding: 0 1px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+} */
+
+#custom-left-arrow-light-1st {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 40px;
+    color: #467b96;
+    background: #282c34;
+    margin: -17px -5px -25px -5px;
+}
+
+#custom-left-arrow-light {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 40px;
+    color: #467b96;
+    background: #889fa7;
+    margin: -17px -5px -25px -5px;
+}
+
+#custom-left-arrow-light2 {
+    font-family: Ubuntu;
+    font-weight: 900;
+    font-size: 40px;
+    color: #889fa7;
+    background: #467b96;
+    margin: -17px -5px -25px -5px;
+}
+
+#workspaces {
+    background: #282c34;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 180px;
+    margin: -2 5px -2 5px;
+
+}
+
+#workspaces button {
+    all: unset;
+    /*padding: 0 2px;*/
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 13px;
+    background: transparent;
+    margin-bottom: -2;
+    border-bottom: 4px solid transparent;
+} 
+
+/* irrelevant in hyprland*/
+#workspaces button.hidden {
+    background: transparent;
+    font-size: 13px;
+    color: #ffffff;
+    margin-bottom: -2;
+    border-bottom: 4px solid transparent;
+}
+
+/*defines empty workspaces*/
+#workspaces button.empty {
+    background: transparent;
+    font-size: 13px;
+    color: #696969;
+    margin-bottom: -2;
+    border-bottom: 4px solid transparent;
+}
+
+/*defines persistent workspaces; if a workspace is persistent but not empty,
+ it will highlight it aka it acts the way visible is supposed to*/
+#workspaces button.persistent {
+    background: transparent;
+    font-size: 13px;
+    color: #ffffff;
+    margin-bottom: -2;
+    border-bottom: 4px solid transparent;
+}
+
+#workspaces button.visible {
+    background: transparent;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+}
+
+/*defines empty workspaces*/
+#workspaces button.empty {
+    background: transparent;
+    font-size: 13px;
+    color: #696969;
+    margin-bottom: -2;
+    border-bottom: 4px solid transparent;
+}
+
+#workspaces button.urgent {
+    background: transparent;
+    font-size: 13px;
+    color: #ff6c6b;
+    margin-bottom: -2;
+    border-bottom: 4px solid transparent;
+}
+
+#workspaces button.active {
+    background: #1c1f24; /*either transparent or #1c1f24 */
+    font-size: 13px;
+    /*color: #dfdfdf; */
+    margin-bottom: -2;
+    margin-top: 2;
+    border-bottom: 6px solid #51afef;
+}
+
+#workspaces button.focused {
+    background: #1c1f24; /*either transparent or #1c1f24 */
+    font-size: 13px;
+    /*color: #dfdfdf; */
+    margin-bottom: -2;
+    margin-top: 2;
+    border-bottom: 6px solid #51afef;
+}
+
+#tags {
+
+    background: #282c34;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+
+#tags button {
+    padding: 0 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 12px;
+    background: transparent;
+    color: #696969;
+    border-bottom: 2px solid transparent;
+}
+
+/* IMPORTANT: for focused rules to apply over occupied rules,
+ the focused tags styling needs to be written after the occupied tag rules */
+
+#tags button.occupied {
+    font-size: 12px;
+    background: transparent;
+    color: #dfdfdf;
+    border-bottom: 2px solid transparent;
+}
+
+#tags button.focused {
+    font-size: 12px;
+    background: transparent;
+    /*color: #dfdfdf; */
+    border-bottom: 2px solid #51afef;
+}
+
+
+#tags button.urgent {
+    font-size: 12px;
+    background: transparent;
+    color: #889fa7;
+    border-bottom: 2px solid transparent;
+}
+
+/* Separator used for DT-like themes */
+#custom-separator {
+    color: #666666;
+    margin: 0 0px;
+}
+
+/* Separator based on the one used in Qtile on the left hand side
+   (between Workspaces, layout, and window name) */
+#custom-sep-ws {
+    font-family: Ubuntu Mono;
+    font-weight: 400;
+    color: #474747; /* #666666 or #474747 */
+    font-size: 13px; /* 10 or 14 px */
+    margin: 0 0px;
+}
+/* Custom Layout Widget to show the current layout in Hyprland */
+#custom-layout {
+    color: #dfdfdf;
+    font-size: 11px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    margin: 0 3px 0 0px;
+}
+
+#custom-brightness {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    padding: 0px 0 0 0;
+}
+
+#custom-cpuicon {
+    color: #282c34;
+    background: #889fa7;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    padding: 0px 0 0 0;
+}
+
+#custom-baticon {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    padding: 0px 0 0 0;
+}
+
+#custom-volicon {
+    color: #282c34;
+    background: #889fa7;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    padding: 0px 0 0 0;
+}
+
+#custom-tempicon {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    padding: 0px 0 0 0;
+}
+
+#custom-memicon {
+    color: #282c34;
+    background: #889fa7;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    padding: 0px 0 0 0;
+}
+
+#custom-dateicon {
+    color: #dfdfdf;
+    background: #467b96;
+    font-size: 15px;
+    /*margin order is top, left, bottom, right*/
+    /*left padding is 0 to compensate for the image padding*/
+    padding: 0px 0 0 0;
+}
+#tray {
+    background: #282c34;
+    margin: 0 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+
+}
+
+/* #mode, #clock, #battery {
+    padding: 0 10px;
+} */
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#window {
+    /*background: transparent;
+    color: #51afef;
+    margin: 0 5px; */
+    color: #51afef;
+    background: #282c34;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+}
+
+/* make window module transparent when no windows present */
+window#waybar.empty #window {
+    background-color: transparent;
+    color: #51afef;
+}
+
+#clock {
+    font-family: Ubuntu;
+    /*font-weight: 600; */
+    background-color: #467b96;
+    color: #dfdfdf;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+
+}
+
+#cpu {
+    background-color: #889fa7;
+    color: #282c34;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#backlight {
+    background-color: #467b96;
+    color: #dfdfdf;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#temperature {
+    background-color: #467b96;
+    color: #dfdfdf;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+
+}
+
+#custom-memsh {
+    background-color: #889fa7;
+    color: #282c34;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#memory {
+    background-color: #889fa7;
+    color: #282c34;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#pulseaudio {
+    background-color: #889fa7;
+    color: #282c34;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#wireplumber {
+    background-color: #889fa7;
+    color: #282c34;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#battery {
+    background-color: #467b96;
+    color: #dfdfdf;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#battery.critical {
+    background-color: #467b96;
+    color: #ff0000;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+#battery.charging {
+    background-color: #467b96;
+    color: #dfdfdf;
+    padding-right: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 90px;
+    margin: 0 5px 0 5px;
+
+}
+
+#image.layout{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#image.nixos-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+#image.wayland-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+#image.arch-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+#image.fedora-logo{
+    padding-left: 3px;
+    padding-right: 3px;
+    border-left: 5px solid #282c34;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+
+/* #image.wayland-logo{
+    padding-left: 5px;
+    padding-right: 5px;
+} */

@@ -1,0 +1,72 @@
+#!/bin/bash
+
+export BEMENU_OPTS=" --hb '#467b96' --hf '#dfdfdf' --tb '#467b96' --tf '#dfdfdf' -H 29 --ch 18 --cw 1 --fixed-height --auto-select --fn 'Hack' "
+
+# Function to list devices
+list_devices() {
+    bluetoothctl devices Paired | awk '{print $2 " " $3 " " $4 " " $5 " " $6}'
+}
+
+# Function to connect a device
+connect_device() {
+    local mac_address=$1
+    echo "Connecting to $mac_address..."
+    bluetoothctl connect "$mac_address"
+}
+
+# Function to disconnect a device
+disconnect_device() {
+    local mac_address=$1
+    echo "Disconnecting from $mac_address..."
+    bluetoothctl disconnect "$mac_address"
+}
+
+# Main script
+main() {
+    # Get the list of paired devices
+    devices=$(list_devices)
+    echo "Devices found:"
+    echo "$devices"
+
+    # Check if no devices are paired
+    if [[ -z "$devices" ]]; then
+        echo "No paired devices found."
+        exit 1
+    fi
+
+    # Show the list of paired devices using bemenu
+    selected=$(echo "$devices" | bemenu -p "Select device to connect/disconnect:")
+    echo "Selected device: $selected"
+
+    # Check if the selection is valid
+    if [[ -z "$selected" ]]; then
+        echo "No device selected or bemenu not working."
+        exit 1
+    fi
+
+    # Extract MAC address from the selected line
+    mac_address=$(echo "$selected" | awk '{print $1}')
+    echo "MAC address: $mac_address"
+
+    # Prompt the user to either connect or disconnect
+    action=$(echo -e "Connect\nDisconnect" | bemenu -p "Choose action:")
+    echo "Selected action: $action"
+
+    # Check if the action is valid
+    if [[ -z "$action" ]]; then
+        echo "No action selected or bemenu not working."
+        exit 1
+    fi
+
+    if [[ "$action" == "Connect" ]]; then
+        connect_device "$mac_address"
+    elif [[ "$action" == "Disconnect" ]]; then
+        disconnect_device "$mac_address"
+    else
+        echo "Invalid action selected."
+        exit 1
+    fi
+}
+
+# Run the main function
+main

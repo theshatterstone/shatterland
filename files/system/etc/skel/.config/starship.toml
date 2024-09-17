@@ -1,0 +1,24 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+format = """$directory $cmd_duration
+$character[>](bold #51afef) """
+[character] 
+format = '\[[$symbol]($style)\] '
+success_symbol = "[Insert](bold #41d4fa)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[Insert](bold #fc5454)" 
+vimcmd_symbol = "[Normal](bold #51afef)"
+vimcmd_replace_one_symbol = "[Replace](bold #0f7ecc)"
+vimcmd_replace_symbol = "[Replace](bold #0f7ecc)"
+vimcmd_visual_symbol = "[Visual](bold #41fdfe)"
+
+[directory]
+format = "[$path](#dfdfdf)[$read_only](#dfdfdf)"
+[package]
+disabled = true
+
+[cmd_duration]
+format = "| took [$duration]($style)"
+

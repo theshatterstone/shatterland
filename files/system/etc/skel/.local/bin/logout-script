@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+choice="[Q] Do Nothing\n[L] Logout\n[P] Suspend\n[Z] Hibernate\n[X] Shutdown\n[V] Reboot"
+
+chosen=$(echo -e "$choice" | bemenu -i --hb '#467b96' --hf '#dfdfdf' --tb '#467b96' --tf '#dfdfdf' -H 29 --ch 18  --cw 1 --fixed-height --auto-select --fn 'Hack' -p "Logout Menu: " )
+
+currde=$( neofetch de | cut -d " " -f2 )
+envvarchk=$( echo $XDG_CURRENT_DESKTOP )
+
+
+# Debug: Print the detected desktop environment and XDG_CURRENT_DESKTOP value
+echo "Detected Desktop Environment (neofetch): $currde"
+echo "XDG_CURRENT_DESKTOP: $envvarchk"
+
+#Function for logout
+logout() {
+  if [[ "$currde" == "Hyprland" || "$currde" == "hyprland" || "$envvarchk" == "Hyprland" || "$envvarchk" == "hyprland" ]]; then
+    hyprctl dispatch exit
+  elif [[ "$currde" == "qtile" || "$currde" == "qtile-wayland" || "$envvarchk" == "qtile" ]]; then
+    qtile shell -c "shutdown()"
+  elif [[ "$currde" == "river" ]]; then
+    riverctl exit
+  elif [[ "$currde" == "sway" || "$envvarchk" == "sway" ]]; then
+    swaymsg "exit"
+  elif [[ "$currde" == "cosmic" || "$envvarchk" == "cosmic" || "$currde" == "COSMIC" || "$envvarchk" == "COSMIC" ]]; then
+    killall cosmic-session
+  else
+    hyprctl notify -1 10000 0 "Error, Doesn't detect I'm using Hyprland"
+    hyprctl notify -1 10000 0 "$(echo $XDG_CURRENT_DESKTOP)"
+  fi
+} 
+
+# The reason the letters are weird is because the script is based on bemenu using the letter to isolate a single choice: only 1 string that contains said letter, and automatically select that when it happens, that's what the --auto-select flag is for. 
+case "$chosen" in
+  "[Q] Do Nothing") ;;
+  "[L] Logout") logout;;
+  "[P] Suspend") systemctl suspend ;;
+  "[Z] Hibernate") systemctl hibernate ;;
+  "[X] Shutdown") systemctl poweroff ;;
+  "[V] Reboot") systemctl reboot ;;
+esac
