@@ -29,6 +29,9 @@ modules:
        - starship
        - neovim
        - zsh
+       - eww
+       - network-manager-applet
+       - docker
        - thunar
        - thunar-volman
        - thunar-archive-plugin
