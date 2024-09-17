@@ -23,7 +23,7 @@ ghcr.io/jasonn3/build-container-installer:latest \
 IMAGE_REPO=ghcr.io/theshatterstone \
 IMAGE_NAME=shatterland \
 IMAGE_TAG=latest \
-VARIANT=Bazzite # should match the variant your image is based on
+VARIANT=Bazzite
 ```
 
 ## Installation
