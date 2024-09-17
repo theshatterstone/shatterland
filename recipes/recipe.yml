@@ -37,6 +37,7 @@ modules:
        - thunar-archive-plugin
        - ristretto
        - foot
+       - dunst
        - nwg-look
        - hack-fonts
        - j4-dmenu-desktop
