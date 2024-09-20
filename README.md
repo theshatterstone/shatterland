@@ -14,7 +14,7 @@ To generate a custom iso:
 rpm-ostree install docker
 ```
 
-2. Generate an ISO:
+2. Generate an ISO (replace VARIANT=Bazzite with VARIANT=wayblue if the image is based on wayblue):
 
 ``` "bash"
 mkdir ./iso-output
