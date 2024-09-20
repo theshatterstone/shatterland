@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+# blctrl script
+
+# Function to display help information
+show_help() {
+  echo "Usage: blctrl [OPTION] [ARG]"
+  echo "Options:"
+  echo "  set [ARG]      Adjust the brightness by the specified amount"
+  echo "                 ARG can be in the format +50, -50, 50, etc."
+  echo "  --help         Display this help message"
+}
+
+# Function to handle error messages
+error_message() {
+  echo "Error: $1"
+  show_help
+  exit 1
+}
+
+# Function to get the current brightness percentage
+get_current_brightness() {
+  brightnessctl | grep "Current brightness" | sed -n 's/.*(\([^)]*\)).*/\1/p' | sed 's/%//'
+}
+
+# Function to set the new brightness
+set_brightness() {
+  local new_brightness=$1
+  brightnessctl set "${new_brightness}%"
+  if [[ $? -ne 0 ]]; then
+    error_message "Failed to adjust brightness"
+  fi
+}
+
+# Function to adjust brightness to be a multiple of 5
+adjust_to_multiple_of_5() {
+  local brightness=$1
+  while (( brightness % 5 != 0 )); do
+    (( brightness-- ))
+  done
+  echo $brightness
+}
+
+# Check the first argument using a case statement
+case "$1" in
+  set)
+    if [[ -n "$2" ]]; then
+      current_brightness=$(get_current_brightness)
+      if [[ $? -ne 0 ]]; then
+        error_message "Failed to get current brightness"
+      fi
+
+      # Calculate new brightness based on the second argument
+      if [[ "$2" == +* ]]; then
+        increment=${2#+}
+        new_brightness=$((current_brightness + increment))
+      elif [[ "$2" == -* ]]; then
+        decrement=${2#-}
+        new_brightness=$((current_brightness - decrement))
+      else
+        new_brightness=$2
+      fi
+
+      # Ensure new_brightness is within valid range (0-100)
+      if [[ new_brightness -lt 0 ]]; then
+        new_brightness=0
+      elif [[ new_brightness -gt 100 ]]; then
+        new_brightness=100
+      fi
+
+      # Adjust brightness to be a multiple of 5
+      new_brightness=$(adjust_to_multiple_of_5 "$new_brightness")
+      echo "Adjusted brightness: $new_brightness"
+
+      # Set the new brightness
+      set_brightness "$new_brightness"
+    else
+      error_message "Missing second argument for 'set' command"
+    fi
+    ;;
+  --help)
+    show_help
+    ;;
+  *)
+    show_help
+    ;;
+esac

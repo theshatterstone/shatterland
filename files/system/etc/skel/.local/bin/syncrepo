@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PWD="$(dirname "$(readlink -f "$0")")"
+OGPATHS=$(find ~/Projects/dotfiles/.config -maxdepth 1 -type f -o -type d | sed "s|$(realpath ~/Projects/dotfiles/.config)|$(realpath ~/.config)|" > $PWD/ogpaths.tmp)
+
+max=$(cat $PWD/ogpaths.tmp | wc -l)
+echo "Copying files..."
+echo "From ~/.config/"
+for i in `seq 2 $max`
+do
+    OGLINE=$(head -n $i $PWD/ogpaths.tmp | tail -n 1)
+    cp -rf $OGLINE ~/Projects/dotfiles/.config
+done
+
+echo "From ~/.local/bin/"
+
+cp -rf ~/.local/bin/* ~/Projects/dotfiles/.local/bin
+
+echo "Done!"
+
+echo "Deleting temporary files..."
+
+rm $PWD/ogpaths.tmp
+
+echo "Done!"

@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Originally from lukesmith with some changes from Gavin Freeborn (Gavinok) and me (theshatterstone)
+# Gives a dmenu prompt to search DuckDuckGo.
+# Without input, will open DuckDuckGo.com.
+# Anything else, it searches it.
+export BEMENU_OPTS=" --hb '#467b96' --hf '#dfdfdf' --tb '#467b96' --tf '#dfdfdf' -H 29 --ch 18 --cw 1 --fixed-height --fn 'Hack' "
+LAUNCHER="bemenu -l 5 -i -p "
+[ -z "${DISPLAY}" ] && LAUNCHER="fzf --prompt "
+#BROWSER="qutebrowser"
+BROWSER="flatpak run com.vivaldi.Vivaldi --enable-feature=UseOzonePlatform --ozone-platform=wayland"
+localBROWSER="$BROWSER "
+[ -n "$*" ] && localBROWSER="$*"
+[ -z "${DISPLAY}" ] && localBROWSER="w3m "
+
+if [ -f ~/.config/bookmarks ]; then
+    choice=$( (echo "BROWSER_START_PAGE" && cat ~/.config/bookmarks) | $LAUNCHER"Search:") || exit 1
+else
+    choice=$(echo "BROWSER_START_PAGE" | $LAUNCHER -i -p "Search DuckDuckGo:") || exit 1
+fi
+
+case "$choice" in
+*BROWSER_START_PAGE*)
+    $localBROWSER"file://$HOME/Projects/startpage/index.html"
+    exit
+    ;;
+http*)
+    $localBROWSER"$choice"
+    exit
+    ;;
+*)
+    # Extract the URL which is the last word in the choice if it's from the bookmarks
+    url=$(echo "$choice" | awk '{print $NF}')
+    
+    # Check if the extracted URL is a valid URL (contains http or https)
+    if [[ "$url" =~ ^http ]]; then
+        $localBROWSER"$url"
+    else
+        # If not, search the input on Brave
+        $localBROWSER"https://search.brave.com/search?q=$choice"
+    fi
+    exit
+    ;;
+esac
+# vim:ft=sh

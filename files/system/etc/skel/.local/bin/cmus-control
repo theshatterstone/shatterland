@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+export BEMENU_OPTS=" --hb '#467b96' --hf '#dfdfdf' --tb '#467b96' --tf '#dfdfdf' -H 29 --ch 18 --cw 1 --fixed-height -i --fn 'Hack' "
+export TERMINAL="foot"
+# Function to control cmus commands
+cmus_control() {
+  case $1 in
+    Pause/Play) cmus-remote --pause ;;
+    Next) cmus-remote --queue --next ;;
+    Previous) cmus-remote --queue --prev ;;
+    "Open Playlist") open_playlist ;;
+    "Play single track") play_single_track ;;
+    "Shuffle") cmus-remote -C "view queue" && cmus-remote --queue -C "rand";;
+    "Open CMUS Window") $TERMINAL -T cmus -e cmus;;
+  esac
+}
+
+# Function to open a playlist
+open_playlist() {
+  playlist=$(find ~/Music/Music/Playlists/M3U-PC -type f -name "*.m3u" | bemenu -p "Open Playlist:")
+  if [ -n "$playlist" ]; then
+    cmus-remote --queue --clear && cmus-remote --queue --play "$playlist"
+    cmus-remote -C "view queue" && cmus-remote --queue -C "rand"
+    cmus-remote --queue --next 
+  fi
+}
+
+# Function to play a single track
+play_single_track() {
+  track=$(find ~/Music/Music -type f \( -name "*.mp3" -o -name "*.flac" \) -o -type d | bemenu -p "Play Track:")
+  while [ -d "$track" ]; do
+    track=$(find "$track" -type f \( -name "*.mp3" -o -name "*.flac" \) -o -type d | bemenu -p "Play Track:")
+  done
+  if [ -n "$track" ]; then
+    cmus-remote --queue --clear && cmus-remote --queue --play "$track"
+  fi
+}
+
+# Main menu
+choice=$(echo -e "Pause/Play\nNext\nPrevious\nOpen Playlist\nPlay single track\nToggle Shuffle\nOpen CMUS Window" | bemenu -p "CMUS:")
+
+# Execute the selected command
+cmus_control "$choice"
