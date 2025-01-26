@@ -4,6 +4,28 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 
 After setup, it is recommended you update this README to describe your custom image.
 
+## README UPDATE: CUSTOM ISO
+
+To generate a custom iso:
+
+1. Install docker:
+
+``` "bash"
+rpm-ostree install docker
+```
+
+2. Generate an ISO (replace VARIANT=Bazzite with VARIANT=wayblue if the image is based on wayblue):
+
+``` "bash"
+mkdir ./iso-output
+sudo docker run --rm --privileged --volume ./iso-output:/build-container-installer/build --pull=always \
+ghcr.io/jasonn3/build-container-installer:latest \
+IMAGE_REPO=ghcr.io/theshatterstone \
+IMAGE_NAME=shatterland \
+IMAGE_TAG=latest \
+VARIANT=Bazzite
+```
+
 ## Installation
 
 > [!WARNING]  
