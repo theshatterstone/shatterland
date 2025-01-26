@@ -6,7 +6,8 @@ name: shatterland
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+# base-image: ghcr.io/wayblueorg/hyprland
+base-image: ghcr.io/ublue-os/bazzite
 image-version: 41 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -19,26 +20,62 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+       - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/ryanabx-cosmic-epoch-fedora-%OS_VERSION%.repo
+       - https://copr.fedorainfracloud.org/coprs/atim/ubuntu-fonts/repo/fedora-%OS_VERSION%/atim-ubuntu-fonts-fedora-%OS_VERSION%.repo
+       # - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-%OS_VERSION%/ryananx-cosmic-epoch-fedora-%OS_VERSION%.repo       
+       - https://copr.fedorainfracloud.org/coprs/zawertun/hack-fonts/repo/fedora-%OS_VERSION%/zawertun-hack-fonts-fedora-%OS_VERSION%.repo
     install:
-      - micro
-      - starship
+      # - micro
+       - starship
+       - neovim
+       - zsh
+       - network-manager-applet
+       - docker
+       - alacritty
+       - hack-fonts
+       - bootc
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      # - firefox
+      # - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
+      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      # repo-name: flathub
+      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        - org.mozilla.firefox
-        - org.gnome.Loupe
+         - com.vivaldi.Vivaldi
+         - com.github.tchx84.Flatseal
+        # - org.mozilla.firefox
+        # - org.gnome.Loupe
+        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
+      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
+      # Installing different branches of the same Flatpak is not supported.
       remove:
-        - org.gnome.eog
-    user: {} # Also add Flathub user repo, but no user packages
-
+      # - org.gnome.eog
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode # don't add spaces or "Nerd Font" suffix.
+        - Hack
+        - SourceCodePro
+        - Terminus
+        - Ubuntu
+        - UbuntuMono
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
+  - type: chezmoi
+    repository: "https://gitlab.com/theshatterstone/dots-chezmoi" # my dotfiles repo
+    all-users: true # enabled for all users
+    file-conflict-policy: replace # override changed files with those from the repo
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
