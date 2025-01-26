@@ -33,6 +33,9 @@ jobs:
         uses: docker/login-action@v3
         with:
           logout: false
+          registry: ghcr.io
+          username: theshatterstone
+          password: ${{ github.token }}
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
